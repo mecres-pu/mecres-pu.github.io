@@ -3,85 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mecres | Mechatronics & Research Society, Presidency University Kolkata</title>
+<title>Home | Mecres - Presidency University Kolkata</title>
 <meta name="description" content="Mecres is the Mechatronics & Research Society of Presidency University, Kolkata.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚙️</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
-<!--
-  MECRES WEBSITE (open source, MIT licence)
-  HOW TO EDIT: change only the SITE object in the <script> at the bottom.
-  Colours and fonts are the variables at the top of the <style> block.
--->
-<style>
-:root{
-  --paper:#EAF0F6; --card:#F7FAFC; --ink:#0F1F33; --muted:#4A5C73;
-  --line:#B7C5D6; --blue:#1F4FD8; --signal:#F2B705; --on-blue:#fff;
-  --head:"Bricolage Grotesque","Trebuchet MS",sans-serif;
-  --body:"IBM Plex Sans",system-ui,"Segoe UI",sans-serif;
-}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){--paper:#0B1626;--card:#10223A;--ink:#E6EEF8;--muted:#9DB0C8;--line:#243B5A;--blue:#7BA0FF;--on-blue:#0B1626}
-}
-:root[data-theme="dark"]{--paper:#0B1626;--card:#10223A;--ink:#E6EEF8;--muted:#9DB0C8;--line:#243B5A;--blue:#7BA0FF;--on-blue:#0B1626}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:70px}
-body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.65 var(--body);
-  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
-  background-size:48px 48px;background-attachment:fixed;background-blend-mode:soft-light}
-body::before{content:"";position:fixed;inset:0;background:var(--paper);opacity:.86;z-index:-1}
-h1,h2,h3{font-family:var(--head);line-height:1.12;margin:0 0 .5em}
-h1{font-size:clamp(2.6rem,7vw,5rem);font-weight:700;letter-spacing:-.02em}
-h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700}
-h3{font-size:1.2rem;font-weight:500}
-p{margin:0 0 1em;max-width:62ch}
-a{color:var(--blue)}
-:focus-visible{outline:3px solid var(--signal);outline-offset:2px}
-.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
-section{padding:72px 0;border-top:1px solid var(--line)}
-.lead{color:var(--muted);font-size:1.15rem}
-header{position:sticky;top:0;z-index:10;background:var(--paper);border-bottom:1px solid var(--line)}
-nav{display:flex;align-items:center;gap:20px;height:58px}
-.brand{font:700 1.3rem var(--head);color:var(--ink);text-decoration:none;margin-right:auto}
-nav a:not(.brand){color:var(--ink);text-decoration:none;font-size:.95rem}
-nav a:not(.brand):hover{text-decoration:underline;text-decoration-color:var(--signal);text-underline-offset:6px;text-decoration-thickness:3px}
-#theme{background:none;border:1px solid var(--line);color:var(--ink);border-radius:6px;padding:4px 10px;cursor:pointer;font:inherit;font-size:.9rem}
-@media(max-width:760px){nav a.hide-sm{display:none}}
-.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center;padding:64px 0 72px;border:0}
-@media(max-width:820px){.hero{grid-template-columns:1fr}}
-.hero .tag{display:inline-block;background:var(--signal);color:#1a1400;padding:3px 12px;border-radius:4px;font-weight:500;font-size:.95rem;margin-bottom:18px}
-.btn{display:inline-block;background:var(--blue);color:var(--on-blue);padding:11px 22px;border-radius:6px;text-decoration:none;font-weight:500;margin:6px 10px 6px 0}
-.btn.alt{background:none;color:var(--ink);border:1.5px solid var(--ink)}
-.gears{width:100%;max-width:380px;justify-self:center;color:var(--ink)}
-.spin{transform-origin:center;transform-box:fill-box;animation:spin 24s linear infinite}
-.spin.rev{animation-direction:reverse;animation-duration:16s}
-.orbit{transform-origin:200px 200px;animation:spin 40s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-@media(prefers-reduced-motion:reduce){.spin,.orbit{animation:none}}
-.chips{display:flex;flex-wrap:wrap;gap:10px;padding:0;list-style:none;margin:20px 0 0}
-.chips li{border:1.5px solid var(--ink);border-radius:999px;padding:5px 16px;background:var(--card)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px;margin-top:28px}
-.box{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--blue);padding:18px 20px;border-radius:4px}
-.box p{margin:0;color:var(--muted);font-size:.98rem}
-.box.ev{border-left-color:var(--signal)}
-.person{border-left:0;border-top:5px solid var(--signal)}
-.person small{color:var(--muted);display:block}
-form{display:grid;gap:12px;max-width:520px;margin-top:20px}
-input,textarea{font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink)}
-button.btn{border:0;cursor:pointer;font:inherit;font-weight:500;justify-self:start}
-footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-size:.95rem}
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <header><div class="wrap"><nav aria-label="Main">
-  <a class="brand" href="#top" id="brand"></a>
-  <a class="hide-sm" href="#about">About</a>
-  <a class="hide-sm" href="#fields">Fields</a>
-  <a class="hide-sm" href="#events">Events</a>
-  <a class="hide-sm" href="#teams">Teams</a>
-  <a class="hide-sm" href="#leaders">Leadership</a>
-  <a href="#join">Join</a>
+  <a class="brand" href="index.html" id="brand">Mecres</a>
+  <a class="hide-sm" href="index.html">Home</a>
+  <a class="hide-sm" href="about.html">About</a>
+  <a class="hide-sm" href="teams.html">Teams</a>
+  <a class="hide-sm" href="events.html">Events</a>
+  <a class="hide-sm" href="contact.html">Contact</a>
   <button id="theme" aria-label="Toggle dark mode">Theme</button>
 </nav></div></header>
 
@@ -92,7 +29,8 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-s
       <span class="tag" id="uni"></span>
       <h1 id="title"></h1>
       <p class="lead" id="tagline"></p>
-      <a class="btn" href="#join">Join Mecres</a><a class="btn alt" href="#events">See what we run</a>
+      <a class="btn" href="contact.html">Join Mecres</a>
+      <a class="btn alt" href="events.html">See what we run</a>
     </div>
     <svg class="gears" viewBox="0 0 400 400" role="img" aria-label="Interlocking gears inside an orbit ring">
       <g fill="none" stroke="currentColor" stroke-width="3">
@@ -105,121 +43,19 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-s
   </div>
 </div>
 
-<section id="about"><div class="wrap">
+<section id="about-preview"><div class="wrap">
   <h2>A place where technology and research feel at home</h2>
   <p id="mission"></p>
+  <a class="btn alt" href="about.html">Learn more about us &rarr;</a>
 </div></section>
 
-<section id="fields"><div class="wrap">
-  <h2>What we work on</h2>
-  <ul class="chips" id="fieldList"></ul>
-</div></section>
-
-<section id="events"><div class="wrap">
-  <h2>What we organise</h2>
-  <div class="grid" id="eventList"></div>
-</div></section>
-
-<section id="teams"><div class="wrap">
-  <h2>Our teams</h2>
-  <div class="grid" id="teamList"></div>
-</div></section>
-
-<section id="leaders"><div class="wrap">
-  <h2>Leadership</h2>
-  <p class="lead">Replace the sample names below with your council.</p>
-  <div class="grid" id="leaderList"></div>
-</div></section>
-
-<section id="join"><div class="wrap">
-  <h2>Join or collaborate</h2>
-  <p id="joinText"></p>
-  <form id="contact">
-    <label>Name<br><input name="name" required autocomplete="name"></label>
-    <label>Email<br><input type="email" name="email" required autocomplete="email"></label>
-    <label>Message<br><textarea name="msg" rows="4" required></textarea></label>
-    <button class="btn" type="submit">Send by email</button>
-  </form>
-</div></section>
 </main>
 
 <footer><div class="wrap">
   <div id="foot"></div>
-  <div>Open source under the MIT licence. Fork it, edit the SITE object, and publish.</div>
+  <div>Open source under the MIT licence. Fork it, edit the SITE object in script.js, and publish.</div>
 </div></footer>
 
-<script>
-/* ===== EDIT ONLY THIS OBJECT ===== */
-const SITE = {
-  short: "Mecres",
-  name: "Mechatronics & Research Society",
-  university: "Presidency University, Kolkata",
-  tagline: "Students building, testing and researching across engineering, computation and the physical sciences.",
-  mission: "Mecres exists to create a welcoming environment for technology and research at Presidency University. We run fests, workshops, hackathons, national challenges and symposiums, and we give every member, from first-year beginners to experienced researchers, a team to build with and a problem worth solving.",
-  email: "mecres@example.com",         // change to your society email
-  social: [                            // add or remove links
-    {label: "GitHub", url: "https://github.com/your-org"},
-    {label: "Instagram", url: "https://instagram.com/your-handle"},
-    {label: "LinkedIn", url: "https://linkedin.com/company/your-page"}
-  ],
-  fields: ["Computation","AI & ML","Mechanical & Electrical Engineering","Sustainable Development","Quantum Computing","Aerospace","Robotics","Astronomy & Astrophysics","Applied Physics"],
-  events: [
-    {t:"Fests", d:"Annual tech and research festival with exhibits, talks and competitions."},
-    {t:"Workshops", d:"Hands-on sessions on microcontrollers, machine learning, CAD and more."},
-    {t:"Hackathons", d:"Time-boxed build events across software, hardware and data."},
-    {t:"National Challenges", d:"Open competitions for students from institutions across India."},
-    {t:"Symposiums", d:"Invited talks and paper sessions with researchers and industry speakers."}
-  ],
-  teams: [
-    {t:"Mechanical Engineering", d:"Design, prototyping and fabrication."},
-    {t:"Electrical Engineering", d:"Circuits, power systems and embedded hardware."},
-    {t:"Computation", d:"Software, simulation and scientific computing."},
-    {t:"AI & Robotics", d:"Machine learning models and autonomous systems."},
-    {t:"Research & Analyst", d:"Literature reviews, data analysis and paper writing."},
-    {t:"PR & Media", d:"Design, photography, social media and documentation."}
-  ],
-  leaders: [
-    {r:"President", n:"Name Surname"},
-    {r:"Vice-President", n:"Name Surname"},
-    {r:"Chief Technology Officer (CTO)", n:"Name Surname"},
-    {r:"Chief Operating Officer (COO)", n:"Name Surname"},
-    {r:"Inventory Manager", n:"Name Surname"},
-    {r:"IT Lead", n:"Name Surname"},
-    {r:"Corporate Relations Head", n:"Name Surname"},
-    {r:"PR & Outreach Head", n:"Name Surname"}
-  ],
-  joinText: "Students from any department are welcome. Sponsors, speakers and partner institutions can reach us through the same form."
-};
-/* ===== END OF EDITABLE SECTION ===== */
-
-const $ = id => document.getElementById(id);
-const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-document.title = `${SITE.short} | ${SITE.name}, ${SITE.university}`;
-$("brand").textContent = SITE.short;
-$("uni").textContent = SITE.university;
-$("title").textContent = SITE.name;
-$("tagline").textContent = SITE.tagline;
-$("mission").textContent = SITE.mission;
-$("joinText").textContent = SITE.joinText;
-$("fieldList").innerHTML = SITE.fields.map(f => `<li>${esc(f)}</li>`).join("");
-$("eventList").innerHTML = SITE.events.map(e => `<div class="box ev"><h3>${esc(e.t)}</h3><p>${esc(e.d)}</p></div>`).join("");
-$("teamList").innerHTML = SITE.teams.map(e => `<div class="box"><h3>${esc(e.t)}</h3><p>${esc(e.d)}</p></div>`).join("");
-$("leaderList").innerHTML = SITE.leaders.map(p => `<div class="box person"><h3>${esc(p.n)}</h3><small>${esc(p.r)}</small></div>`).join("");
-$("foot").innerHTML = `<p>${esc(SITE.short)}, ${esc(SITE.university)}. Contact: <a href="mailto:${esc(SITE.email)}">${esc(SITE.email)}</a>. ` +
-  SITE.social.map(s => `<a href="${esc(s.url)}" rel="noopener">${esc(s.label)}</a>`).join(", ") + `</p>`;
-
-$("contact").addEventListener("submit", e => {
-  e.preventDefault();
-  const f = new FormData(e.target);
-  const body = `${f.get("msg")}\n\nFrom: ${f.get("name")} (${f.get("email")})`;
-  location.href = `mailto:${SITE.email}?subject=${encodeURIComponent("Message to " + SITE.short)}&body=${encodeURIComponent(body)}`;
-});
-
-$("theme").addEventListener("click", () => {
-  const r = document.documentElement;
-  const dark = r.dataset.theme ? r.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
-  r.dataset.theme = dark ? "light" : "dark";
-});
-</script>
+<script src="script.js"></script>
 </body>
 </html>
