@@ -12,34 +12,92 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header><div class="wrap"><nav aria-label="Main">
-  <a class="brand" href="index.html" id="brand">Mecres</a>
-  <a class="hide-sm" href="index.html">Home</a>
-  <a class="hide-sm" href="about.html">About</a>
-  <a class="hide-sm" href="teams.html">Teams</a>
-  <a class="hide-sm" href="events.html">Events</a>
-  <a class="hide-sm" href="contact.html">Contact</a>
-  <button id="theme" aria-label="Toggle dark mode">Theme</button>
-</nav></div></header>
+<header>
+  <div class="wrap">
+    <nav aria-label="Main">
+      <a class="brand" href="index.html" id="brand">Mecres</a>
+      <a class="hide-sm" href="index.html">Home</a>
+      <a class="hide-sm" href="about.html">About</a>
+      <a class="hide-sm" href="teams.html">Teams</a>
+      <a class="hide-sm" href="events.html">Events</a>
+      <a class="hide-sm" href="contact.html">Contact</a>
+      <button id="theme" aria-label="Toggle dark mode">Theme</button>
+    </nav>
+  </div>
+</header>
 
 <main id="top">
-<section id="join"><div class="wrap">
-  <h2>Join or Collaborate</h2>
-  <p id="joinText"></p>
-  <form id="contact">
-    <label>Name<br><input name="name" required autocomplete="name"></label>
-    <label>Email<br><input type="email" name="email" required autocomplete="email"></label>
-    <label>Message<br><textarea name="msg" rows="4" required></textarea></label>
-    <button class="btn" type="submit">Send by email</button>
-  </form>
-</div></section>
+  <section id="join" class="contact-section">
+    <div class="wrap contact-wrapper">
+      
+      <!-- Left Column: Info & Details -->
+      <div class="contact-info">
+        <span class="tag">Get in Touch</span>
+        <h2>Join or Collaborate</h2>
+        <p id="joinText">Whether you're interested in research collaborations, student projects, or society membership, reach out to us.</p>
+        
+        <div class="info-cards">
+          <div class="info-card">
+            <div class="icon">📍</div>
+            <div>
+              <h3>Location</h3>
+              <p>Presidency University, College Street, Kolkata</p>
+            </div>
+          </div>
 
+          <div class="info-card">
+            <div class="icon">✉️</div>
+            <div>
+              <h3>Email</h3>
+              <p>contact@mecres.org</p>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="icon">⚡</div>
+            <div>
+              <h3>Lab Hours</h3>
+              <p>Mon - Fri: 10:00 AM – 6:00 PM IST</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Interactive Form -->
+      <div class="contact-form-card">
+        <form id="contact" class="contact-form">
+          <div class="input-group">
+            <input type="text" name="name" id="name" required placeholder=" " autocomplete="name">
+            <label for="name">Your Name</label>
+          </div>
+
+          <div class="input-group">
+            <input type="email" name="email" id="email" required placeholder=" " autocomplete="email">
+            <label for="email">Email Address</label>
+          </div>
+
+          <div class="input-group">
+            <textarea name="msg" id="msg" rows="4" required placeholder=" "></textarea>
+            <label for="msg">Your Message</label>
+          </div>
+
+          <button class="btn submit-btn" type="submit">
+            <span>Send by email</span>
+            <span class="arrow">→</span>
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </section>
 </main>
 
-<footer><div class="wrap">
-  <div id="foot"></div>
-  <div>Open source under the MIT licence. Fork it, edit the SITE object in script.js, and publish.</div>
-</div></footer>
+<footer>
+  <div class="wrap">
+    <div id="foot"></div>
+    <div>Open source under the MIT licence. Fork it, edit the SITE object in script.js, and publish.</div>
+  </div>
+</footer>
 
 <script src="script.js"></script>
 </body>
