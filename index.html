@@ -11,72 +11,73 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-<header><div class="wrap"><nav aria-label="Main">
-  <a class="brand" href="index.html" id="brand">Mecres</a>
-  <a class="hide-sm" href="index.html">Home</a>
-  <a class="hide-sm" href="about.html">About</a>
-  <a class="hide-sm" href="teams.html">Teams</a>
-  <a class="hide-sm" href="events.html">Events</a>
-  <a class="hide-sm" href="contact.html">Contact</a>
-  <button id="theme" aria-label="Toggle dark mode">Theme</button>
-</nav></div></header>
+<body data-theme="cinematic">
+<header>
+  <div class="wrap">
+    <nav aria-label="Main">
+      <a class="brand" href="index.html" id="brand">Mecres</a>
+      <a class="hide-sm" href="index.html">Home</a>
+      <a class="hide-sm" href="about.html">About</a>
+      <a class="hide-sm" href="teams.html">Teams</a>
+      <a class="hide-sm" href="events.html">Events</a>
+      <a class="hide-sm" href="contact.html">Contact</a>
+      <select id="theme-select" aria-label="Select theme">
+        <option value="auto">Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+        <option value="cinematic" selected>Cinematic</option>
+      </select>
+    </nav>
+  </div>
+</header>
 
 <main id="top">
-<div class="wrap">
-  <div class="hero">
-    <div>
-      <span class="tag" id="uni"></span>
-      <h1 id="title"></h1>
-      <p class="lead" id="tagline"></p>
-      <a class="btn" href="contact.html">Join Mecres</a>
-      <a class="btn alt" href="events.html">See what we run</a>
+  <!-- Cinematic Hero Banner -->
+  <section class="hero-cinematic">
+    <!-- Top Floating Pill Badge -->
+    <div class="pill-badge">
+      <span class="badge-icon">⚙️</span>
+      <span id="uni">Presidency University Kolkata • Mechatronics & Research</span>
     </div>
-    <svg class="gears" viewBox="0 0 400 400" role="img" aria-label="Interlocking gears inside an orbit ring">
-      <g fill="none" stroke="currentColor" stroke-width="3">
-        <circle cx="200" cy="200" r="180" stroke-dasharray="3 9" opacity=".5"/>
-        <g class="orbit"><circle cx="200" cy="20" r="11" fill="#F2B705" stroke="none"/></g>
-        <g class="spin"><circle cx="160" cy="170" r="70" stroke-dasharray="14 8" stroke-width="16"/><circle cx="160" cy="170" r="48"/><circle cx="160" cy="170" r="9" fill="currentColor"/></g>
-        <g class="spin rev"><circle cx="268" cy="262" r="46" stroke-dasharray="11 7" stroke-width="14"/><circle cx="268" cy="262" r="30"/><circle cx="268" cy="262" r="7" fill="#1F4FD8" stroke="none"/></g>
-      </g>
-    </svg>
-  </div>
-</div>
 
-<section id="about-preview"><div class="wrap">
-  <h2>A place where technology and research feel at home</h2>
-  <p id="mission"></p>
-  <a class="btn alt" href="about.html">Learn more about us &rarr;</a>
-</div></section>
-<section class="hero-cinematic">
-  <!-- Top Floating Badge -->
-  <div class="pill-badge">
-    <span class="badge-icon">⚙️</span>
-    <span>Presidency University Kolkata • Mechatronics & Research</span>
-  </div>
+    <!-- Dual-Tone Heading -->
+    <h1 id="title">
+      Stop Building Projects
+      <span class="accent-text">In Isolated Silos</span>
+    </h1>
 
-  <!-- Dual-Tone Heading -->
-  <h1>
-    Stop Building Projects
-    <span class="accent-text">In Isolated Silos</span>
-  </h1>
+    <!-- Subtitle / Tagline -->
+    <p class="hero-subtitle" id="tagline">
+      Robotics, embedded systems, AI, and hardware engineering — finally under one roof, collaborating together to solve real-world challenges.
+    </p>
 
-  <!-- Subtitle -->
-  <p class="hero-subtitle">
-    Robotics, embedded systems, AI, and hardware engineering — finally under one roof, collaborating together to solve real-world challenges.
-  </p>
+    <!-- Call to Action Buttons -->
+    <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; align-items: center;">
+      <a href="contact.html" class="btn-pill-dark">
+        Join the Society — Open to All
+      </a>
+      <a href="events.html" class="btn alt" style="border-radius: 999px; padding: 13px 26px;">
+        See what we run &rarr;
+      </a>
+    </div>
+  </section>
 
-  <!-- Pill Action Button -->
-  <a href="contact.html" class="btn-pill-dark">
-    Join the Society — Open to All
-  </a>
-</section>
+  <!-- About Preview Section -->
+  <section id="about-preview">
+    <div class="wrap">
+      <h2>A place where technology and research feel at home</h2>
+      <p id="mission"></p>
+      <a class="btn alt" href="about.html">Learn more about us &rarr;</a>
+    </div>
+  </section>
 </main>
 
-<footer><div class="wrap">
-  <div id="foot"></div>
-  <div>Open source under the MIT licence. Fork it, edit the SITE object in script.js, and publish.</div>
-</div></footer>
+<footer>
+  <div class="wrap">
+    <div id="foot"></div>
+    <div>Open source under the MIT licence. Fork it, edit the SITE object in script.js, and publish.</div>
+  </div>
+</footer>
 
 <script src="script.js"></script>
 </body>
