@@ -1,4 +1,8 @@
-/* Mecres Society Stylesheet - Integrated & Updated with Cinematic Theme */
+/* Mecres Society Stylesheet - Cleaned & Fully Integrated */
+
+/* ==========================================================================
+   1. Root Variables & Standard Themes
+   ========================================================================== */
 :root {
   --paper: #EAF0F6;
   --card: #F7FAFC;
@@ -14,7 +18,8 @@
 
 /* System Preference Dark Mode */
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]):not([data-theme="cinematic"]) {
+  :root:not([data-theme="light"]):not([data-theme="cinematic"]),
+  body:not([data-theme="light"]):not([data-theme="cinematic"]) {
     --paper: #0B1626;
     --card: #10223A;
     --ink: #E6EEF8;
@@ -26,7 +31,8 @@
 }
 
 /* Explicit Dark Theme Override */
-:root[data-theme="dark"] {
+:root[data-theme="dark"],
+[data-theme="dark"] {
   --paper: #0B1626;
   --card: #10223A;
   --ink: #E6EEF8;
@@ -36,38 +42,9 @@
   --on-blue: #0B1626;
 }
 
-/* --- Cinematic Ghibli-Inspired Theme --- */
-:root[data-theme="cinematic"] {
-  --paper: #d0e4f7;
-  --card: rgba(255, 255, 255, 0.82);
-  --ink: #0f172a;
-  --muted: #475569;
-  --line: rgba(15, 23, 42, 0.12);
-  --blue: #2563eb;
-  --signal: #f59e0b;
-  --on-blue: #ffffff;
-}
-
-:root[data-theme="cinematic"] body {
-  background-image: 
-    radial-gradient(circle at center, rgba(255, 255, 255, 0.35) 0%, rgba(15, 23, 42, 0.15) 100%),
-    url('ghibli-bg.png'); /* Updated path to your exact image */
-  background-size: cover;
-  background-position: center bottom;
-  background-attachment: fixed;
-}
-
-:root[data-theme="cinematic"] .box,
-:root[data-theme="cinematic"] .contact-form-card,
-:root[data-theme="cinematic"] .info-card {
-  background: rgba(255, 255, 255, 0.78);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
-}
-
-/* Fixed Universal Selector */
+/* ==========================================================================
+   2. Base Styles & Reset
+   ========================================================================== */
 * {
   box-sizing: border-box;
 }
@@ -79,7 +56,7 @@ html {
 
 body {
   margin: 0;
-  background: var(--paper);
+  background-color: var(--paper);
   color: var(--ink);
   font: 400 1.0625rem/1.65 var(--body);
   background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
@@ -149,7 +126,9 @@ section {
   font-size: 1.15rem;
 }
 
-/* --- Header & Navigation --- */
+/* ==========================================================================
+   3. Header & Navigation
+   ========================================================================== */
 header {
   position: sticky;
   top: 0;
@@ -186,7 +165,7 @@ nav a.active {
   text-decoration-thickness: 3px;
 }
 
-/* Theme Button & Selector */
+/* Theme Selector Control */
 #theme, #theme-select {
   background: var(--card);
   border: 1px solid var(--line);
@@ -205,7 +184,9 @@ nav a.active {
   }
 }
 
-/* --- Default Hero Section --- */
+/* ==========================================================================
+   4. Default Hero & Component Styles
+   ========================================================================== */
 .hero {
   display: grid;
   grid-template-columns: 1.2fr .8fr;
@@ -256,14 +237,15 @@ nav a.active {
   border: 1.5px solid var(--ink);
 }
 
-/* --- Cinematic Hero Layout Components --- */
+/* --- Hero Cinematic Banner Layout --- */
 .hero-cinematic {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 90px 20px 110px;
-  max-width: 900px;
+  padding: 90px 20px 120px;
+  max-width: 960px;
   margin: 0 auto;
 }
 
@@ -271,25 +253,25 @@ nav a.active {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  padding: 6px 16px;
-  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  padding: 6px 18px;
+  border-radius: 9999px;
   font-size: 0.88rem;
   font-weight: 500;
   color: #0f172a;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   margin-bottom: 24px;
 }
 
 .hero-cinematic h1 {
   font-family: var(--head);
-  font-size: clamp(2.8rem, 6vw, 4.8rem);
+  font-size: clamp(2.8rem, 6.5vw, 5.2rem);
   font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
   color: var(--ink);
   margin-bottom: 20px;
 }
@@ -297,39 +279,42 @@ nav a.active {
 .hero-cinematic h1 .accent-text {
   color: var(--blue);
   display: block;
+  margin-top: 4px;
 }
 
 .hero-cinematic p.hero-subtitle {
-  font-size: 1.15rem;
+  font-size: 1.18rem;
   color: var(--muted);
-  max-width: 640px;
-  margin: 0 auto 32px;
+  max-width: 680px;
+  margin: 0 auto 36px;
   line-height: 1.6;
 }
 
 .btn-pill-dark {
-  background: #0f172a;
-  color: #ffffff;
-  padding: 14px 28px;
-  border-radius: 999px;
+  background: #090d16;
+  color: #ffffff !important;
+  padding: 14px 32px;
+  border-radius: 9999px;
   font-family: var(--head);
   font-weight: 600;
   font-size: 1rem;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.2);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  justify-content: center;
+  box-shadow: 0 12px 28px rgba(9, 13, 22, 0.22);
+  transition: all 0.2s ease;
 }
 
 .btn-pill-dark:hover {
   transform: translateY(-2px);
   background: #1e293b;
-  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.3);
+  box-shadow: 0 16px 36px rgba(9, 13, 22, 0.32);
 }
 
-/* --- Animations & SVGs --- */
+/* ==========================================================================
+   5. Animations & Graphics
+   ========================================================================== */
 .gears {
   width: 100%;
   max-width: 380px;
@@ -365,7 +350,9 @@ nav a.active {
   }
 }
 
-/* --- Chips & Cards --- */
+/* ==========================================================================
+   6. Chips, Cards, Forms & Footer
+   ========================================================================== */
 .chips {
   display: flex;
   flex-wrap: wrap;
@@ -417,7 +404,6 @@ nav a.active {
   display: block;
 }
 
-/* --- Sleek Contact Section Integration --- */
 .contact-section {
   padding: 60px 0;
 }
@@ -485,7 +471,6 @@ nav a.active {
   color: var(--muted);
 }
 
-/* Form Card */
 .contact-form-card {
   background: var(--card);
   border: 1px solid var(--line);
@@ -500,7 +485,6 @@ form {
   width: 100%;
 }
 
-/* Floating Label Inputs */
 .input-group {
   position: relative;
 }
@@ -549,7 +533,6 @@ form {
   border-color: var(--blue);
 }
 
-/* Submit Button Override */
 .submit-btn {
   width: 100%;
   padding: 12px 24px;
@@ -582,7 +565,6 @@ form {
   transition: transform 0.25s ease;
 }
 
-/* Responsive Mobile Layout for Form */
 @media (max-width: 820px) {
   .contact-wrapper {
     grid-template-columns: 1fr;
@@ -594,7 +576,6 @@ form {
   }
 }
 
-/* --- Footer --- */
 footer {
   border-top: 1px solid var(--line);
   padding: 32px 0;
@@ -603,139 +584,81 @@ footer {
 }
 
 /* ==========================================================================
-   CINEMATIC THEME (Fixed Background Overlay & Matching Reference Design)
+   7. CINEMATIC THEME OVERRIDES (Guaranteed Working Fix)
    ========================================================================== */
 
-:root[data-theme="cinematic"] {
+/* Theme Variables */
+:root[data-theme="cinematic"],
+[data-theme="cinematic"] {
   --paper: transparent;
-  --card: rgba(255, 255, 255, 0.82);
+  --card: rgba(255, 255, 255, 0.85);
   --ink: #0f172a;
   --muted: #334155;
   --line: rgba(15, 23, 42, 0.08);
-  --blue: #2563eb; /* Vibrant electric blue highlight */
+  --blue: #2563eb;
   --signal: #f59e0b;
   --on-blue: #ffffff;
 }
 
-/* 1. CRITICAL FIX: Hide the solid overlay pseudo-element masking the background */
-:root[data-theme="cinematic"] body::before {
+/* 1. Remove the 86% solid background mask on body::before */
+html[data-theme="cinematic"] body::before,
+body[data-theme="cinematic"]::before,
+[data-theme="cinematic"] body::before {
   display: none !important;
+  opacity: 0 !important;
+  content: none !important;
 }
 
-/* 2. Full-bleed background image setup */
-:root[data-theme="cinematic"] body {
-  background-color: #82b1ed;
-  /* Replace 'background-art.jpg' with your local artwork file path */
+/* 2. Apply full-bleed background image directly to body */
+html[data-theme="cinematic"] body,
+body[data-theme="cinematic"] {
+  background-color: #72a9e8 !important; /* Sky blue fallback */
   background-image: 
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, rgba(15, 23, 42, 0.2) 100%),
-    url('ghibli-bg.png'); 
-  background-size: cover;
-  background-position: center bottom;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  min-height: 100vh;
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0%, rgba(15, 23, 42, 0.25) 100%),
+    url('ghibli-bg.png') !important;
+  background-size: cover !important;
+  background-position: center bottom !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+  min-height: 100vh !important;
 }
 
-/* 3. Glassmorphic header letting background flow underneath */
-:root[data-theme="cinematic"] header {
+/* 3. Glassmorphic header */
+html[data-theme="cinematic"] header,
+body[data-theme="cinematic"] header {
   background: rgba(255, 255, 255, 0.65) !important;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4) !important;
 }
 
-/* 4. Remove dark section dividing lines slicing the artwork */
-:root[data-theme="cinematic"] section {
+/* 4. Remove dark section border dividers */
+html[data-theme="cinematic"] section,
+body[data-theme="cinematic"] section {
   border-top: none !important;
 }
 
-/* 5. Glassmorphic cards for content readability */
-:root[data-theme="cinematic"] .box,
-:root[data-theme="cinematic"] .contact-form-card,
-:root[data-theme="cinematic"] .info-card {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
+/* 5. Glassmorphic card containers */
+html[data-theme="cinematic"] .box,
+html[data-theme="cinematic"] .contact-form-card,
+html[data-theme="cinematic"] .info-card,
+body[data-theme="cinematic"] .box,
+body[data-theme="cinematic"] .contact-form-card,
+body[data-theme="cinematic"] .info-card {
+  background: rgba(255, 255, 255, 0.82) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.8) !important;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1) !important;
 }
 
-/* --- Hero Section Styling (Matches Reference Image) --- */
-.hero-cinematic {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 100px 20px 140px;
-  max-width: 960px;
-  margin: 0 auto;
+/* 6. Text color override inside cinematic theme */
+html[data-theme="cinematic"] .hero-cinematic h1,
+body[data-theme="cinematic"] .hero-cinematic h1 {
+  color: #0f172a !important;
 }
 
-/* Floating Pill Badge */
-.pill-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.9);
-  padding: 6px 18px;
-  border-radius: 9999px;
-  font-size: 0.88rem;
-  font-weight: 500;
-  color: #0f172a;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  margin-bottom: 28px;
-}
-
-/* Heading Typography */
-.hero-cinematic h1 {
-  font-family: var(--head);
-  font-size: clamp(2.8rem, 6.5vw, 5.2rem);
-  font-weight: 800;
-  line-height: 1.08;
-  letter-spacing: -0.035em;
-  color: #0f172a;
-  margin-bottom: 22px;
-}
-
-/* Dual-Tone Accent Line */
-.hero-cinematic h1 .accent-text {
-  color: #2563eb;
-  display: block;
-  margin-top: 4px;
-}
-
-/* Subtitle */
-.hero-cinematic p.hero-subtitle {
-  font-size: 1.18rem;
-  color: #334155;
-  max-width: 680px;
-  margin: 0 auto 36px;
-  line-height: 1.6;
-}
-
-/* Deep Charcoal Pill CTA Button */
-.btn-pill-dark {
-  background: #090d16;
-  color: #ffffff !important;
-  padding: 14px 32px;
-  border-radius: 9999px;
-  font-family: var(--head);
-  font-weight: 600;
-  font-size: 0.98rem;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 12px 28px rgba(9, 13, 22, 0.22);
-  transition: all 0.2s ease;
-}
-
-.btn-pill-dark:hover {
-  transform: translateY(-2px);
-  background: #1e293b;
-  box-shadow: 0 16px 36px rgba(9, 13, 22, 0.32);
+html[data-theme="cinematic"] .hero-subtitle,
+body[data-theme="cinematic"] .hero-subtitle {
+  color: #334155 !important;
 }
