@@ -601,3 +601,141 @@ footer {
   color: var(--muted);
   font-size: .95rem;
 }
+
+/* ==========================================================================
+   CINEMATIC THEME (Fixed Background Overlay & Matching Reference Design)
+   ========================================================================== */
+
+:root[data-theme="cinematic"] {
+  --paper: transparent;
+  --card: rgba(255, 255, 255, 0.82);
+  --ink: #0f172a;
+  --muted: #334155;
+  --line: rgba(15, 23, 42, 0.08);
+  --blue: #2563eb; /* Vibrant electric blue highlight */
+  --signal: #f59e0b;
+  --on-blue: #ffffff;
+}
+
+/* 1. CRITICAL FIX: Hide the solid overlay pseudo-element masking the background */
+:root[data-theme="cinematic"] body::before {
+  display: none !important;
+}
+
+/* 2. Full-bleed background image setup */
+:root[data-theme="cinematic"] body {
+  background-color: #82b1ed;
+  /* Replace 'background-art.jpg' with your local artwork file path */
+  background-image: 
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, rgba(15, 23, 42, 0.2) 100%),
+    url('ghibli-bg.png'); 
+  background-size: cover;
+  background-position: center bottom;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+/* 3. Glassmorphic header letting background flow underneath */
+:root[data-theme="cinematic"] header {
+  background: rgba(255, 255, 255, 0.65) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* 4. Remove dark section dividing lines slicing the artwork */
+:root[data-theme="cinematic"] section {
+  border-top: none !important;
+}
+
+/* 5. Glassmorphic cards for content readability */
+:root[data-theme="cinematic"] .box,
+:root[data-theme="cinematic"] .contact-form-card,
+:root[data-theme="cinematic"] .info-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
+}
+
+/* --- Hero Section Styling (Matches Reference Image) --- */
+.hero-cinematic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 100px 20px 140px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Floating Pill Badge */
+.pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  padding: 6px 18px;
+  border-radius: 9999px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #0f172a;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 28px;
+}
+
+/* Heading Typography */
+.hero-cinematic h1 {
+  font-family: var(--head);
+  font-size: clamp(2.8rem, 6.5vw, 5.2rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  color: #0f172a;
+  margin-bottom: 22px;
+}
+
+/* Dual-Tone Accent Line */
+.hero-cinematic h1 .accent-text {
+  color: #2563eb;
+  display: block;
+  margin-top: 4px;
+}
+
+/* Subtitle */
+.hero-cinematic p.hero-subtitle {
+  font-size: 1.18rem;
+  color: #334155;
+  max-width: 680px;
+  margin: 0 auto 36px;
+  line-height: 1.6;
+}
+
+/* Deep Charcoal Pill CTA Button */
+.btn-pill-dark {
+  background: #090d16;
+  color: #ffffff !important;
+  padding: 14px 32px;
+  border-radius: 9999px;
+  font-family: var(--head);
+  font-weight: 600;
+  font-size: 0.98rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 28px rgba(9, 13, 22, 0.22);
+  transition: all 0.2s ease;
+}
+
+.btn-pill-dark:hover {
+  transform: translateY(-2px);
+  background: #1e293b;
+  box-shadow: 0 16px 36px rgba(9, 13, 22, 0.32);
+}
