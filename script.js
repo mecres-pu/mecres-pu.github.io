@@ -7,9 +7,9 @@ const SITE = {
   mission: "Mecres exists to create a welcoming environment for technology and research at Presidency University. We run fests, workshops, hackathons, national challenges and symposiums, and we give every member, from first-year beginners to experienced researchers, a team to build with and a problem worth solving.",
   email: "mecres@example.com",
   social: [
-    { label: "GitHub", url: "https://github.com/your-org" },
-    { label: "Instagram", url: "https://instagram.com/your-handle" },
-    { label: "LinkedIn", url: "https://linkedin.com/company/your-page" }
+    { label: "GitHub", url: "https://github.com/mecres-pu" },
+    { label: "Instagram", url: "https://instagram.com/mech.at.presi" },
+    { label: "LinkedIn", url: "https://linkedin.com/company/mecres" }
   ],
   fields: [
     "Computation", "AI & ML", "Mechanical & Electrical Engineering",
